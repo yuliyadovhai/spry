@@ -21,7 +21,7 @@ async def _get_or_404(session: AsyncSession, item_id: uuid.UUID):
 
 
 @router.get("", response_model=ItemList, summary="List items")
-aasync def list_items(
+async def list_items(
     session: SessionDep,
     limit: Annotated[int, Query(ge=1, le=100)] = 20,
     offset: Annotated[int, Query(ge=0)] = 0,
